@@ -1,11 +1,18 @@
 import React from 'react';
 
 
-const SearchBox = ({search})=>{
+const SearchBox = ({search, submit})=>{
     return(
        <div>
-           <form>
-               <input type="text" onChange={search}/>
+           <form onSubmit={submit}>
+                <label htmlFor="">
+                    <input 
+                        type="text" 
+                        placeholder="Enter GitHub Username"
+                        onChange={search}
+                    />
+                </label>
+               <input type="submit"/>
            </form>
        </div> 
     );
