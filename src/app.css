@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=B612+Mono:700i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Alegreya&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h2{
+    cursor: pointer;
+}
+.heading-main{
+    display: flex;
+}
+#dark{
+    margin-top: 20px;
+    margin-left: 400px;
+    width: 50px;
+}
+#heading{
+    display: flex;
+    margin: 20px 0px 0 180px;
+    font-family: 'B612 Mono', monospace;
+    font-size: 40px;
+}
+.user-repo{
+    display: flex;
+    justify-content: space-evenly;
+    /* align-items: center; */
+}

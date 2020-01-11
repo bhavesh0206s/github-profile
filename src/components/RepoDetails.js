@@ -1,21 +1,23 @@
 import React from 'react';
+import "./repo.css"
 
-
-const RepoDetails = ({repo_name, fork_count, star_count, description})=>{
+const RepoDetails = ({repo_name, fork_count, star_count, description, darkOrwhite})=>{
     if(repo_name.length===0){
         return null
     }
     else{
         return(
-            <div>
+            <div id="repo">
                 {repo_name.map((repo,index) => {
                     return(
                         <React.Fragment key={index}>
-                            <h2>{repo}</h2>
-                            <div className="fork-star">
-                                <p>{fork_count[index]}</p>
-                                <p>{star_count[index]}</p>
-                                <p>{description[index]}</p>
+                            <div className={darkOrwhite? darkOrwhite :"white-repo-details"}>
+                                <h2>{repo}</h2>
+                                <div className="fork-star">
+                                    <p>Forks: {fork_count[index]}</p>
+                                    <p id="star">Stars: {star_count[index]}</p>
+                                </div>
+                                <p id="description"><em>{description[index]}</em></p>
                             </div>
                         </React.Fragment>
                     )})}

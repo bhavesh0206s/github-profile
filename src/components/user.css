@@ -1,0 +1,30 @@
+.user-details{
+    margin: 10px 0px 0px 80px;
+    font-family: 'Alegreya', serif;
+}
+
+
+.user-photo > img{
+    width:250px;
+    border-bottom: 2px solid rgb(36, 154, 233);
+    border-radius: 50%;
+}
+.user-photo > h3{
+    margin: 5px 0px 10px 38px ;
+    font-size: 25px;
+}
+.other-details{
+    border: 2px solid black;
+    border-style: none;
+    width: 250px;
+    font-size: 18px;
+}
+ul{
+    list-style-type: none;
+}
+li{
+    box-shadow: 0px 8px 8px -8px rgb(36, 154, 233);
+}
+li>span{
+    float: right;
+}
