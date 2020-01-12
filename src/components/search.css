@@ -28,6 +28,9 @@
     animation: redblue 2s ease-in-out infinite alternate; 
 }
 
+#submit-btn:hover{
+    background-color: rgb(143, 145, 145);
+}
 
 
 @keyframes redblue{
