@@ -30,20 +30,14 @@ class App extends React.Component{
       repo_detail: "",
       dark_style: true,
       repo_style: "",
-      loading: "",
     }
   }
 
-  componentDidMount(){
-    let oldRepoStyle = localStorage.getItem("local_repo_style")
-    console.log(oldRepoStyle)
-    this.setState({dark_style: Boolean(oldRepoStyle)})
-  }
 
   getUserDetails = (id)=>{
     //get user information
     const url = `https://api.github.com/users/${id}`;
-    if(this.state.id){
+    if(id){
       fetch(url)
       .then(res => res.json())
       .then(data=>{
@@ -55,13 +49,13 @@ class App extends React.Component{
           following: data.following
         })
       })
-      .catch(e=> console.log(e))
+      .catch(e=> alert("Not Found"))
     }
   }
   getRepoDetails(id){
     //get repos detials of user and sort them
     const repo = `https://api.github.com/users/${id}/repos`;
-    if(this.state.id){
+    if(id){
       fetch(repo)
       .then(res => res.json())
       .then(repos=>{
@@ -90,22 +84,20 @@ class App extends React.Component{
           description: repoDetailArr
         })
       })
-      .catch(e=> console.log(e))
+      .catch(e=> alert("Not Found"))
     }
   }
-
+  
   handleChange = (e)=>{
     this.setState({name: e.target.value})
   }
-  handleSubmit = (e)=>{
+  handleSubmit = (e)=>{ 
+    this.getUserDetails(this.state.name);
+    this.getRepoDetails(this.state.name);
     e.preventDefault();
-    this.setState({id: this.state.name})
-    this.getUserDetails(this.state.id);
-    this.getRepoDetails(this.state.id);
-    this.setState({loading: false})
   }
 
-  darkConvert = ()=>{
+  darkMode = ()=>{
     if(this.state.dark_style){
       this.setState({dark_style: false})
       for(let i in darkStyle.body){
@@ -113,7 +105,6 @@ class App extends React.Component{
       }
       let darkRepoStyle = "dark-repo-details";
       this.setState({repo_style: darkRepoStyle})
-      localStorage.setItem("local_repo_style", false)
     }
     else{
       this.setState({dark_style: true})
@@ -121,39 +112,24 @@ class App extends React.Component{
       document.body.style.color = "black";
       let whiteRepoStyle = "white-repo-details";
       this.setState({repo_style: whiteRepoStyle})
-      localStorage.setItem("local_repo_style", true)
     }
-    console.log(localStorage.getItem("local_repo_style"))
   }
 
   render(){
-    const {username, followers, repo_count, user_dp, description,repo_name, fork_count, star_count, loading,following, repo_style,dark_style} = this.state;
+    const {username, followers, repo_count, user_dp, description,repo_name, fork_count, star_count,following, repo_style,dark_style} = this.state;
     const darkImg = "https://img.icons8.com/pastel-glyph/64/000000/planet-on-the-dark-side.png";
     const whiteImg = "https://img.icons8.com/cotton/64/000000/planet-on-the-dark-side.png"
-    if(loading){
+
       return(
         <div>
           <div className="heading-main">
             <h1 id="heading">Github Profile Finder</h1>
-            <h2 onClick={this.darkConvert} id="dark">
+            <div onClick={this.darkMode} id="dark">
               {!dark_style? <img src={whiteImg} alt="DarkMode"/> : <img src={darkImg} alt="WhiteMode"/> }
-            </h2>
-          </div>
-          <h2>loading...</h2>
-        </div>
-      )
-    }
-    else{
-      return(
-        <div>
-          <div className="heading-main">
-            <h1 id="heading">Github Profile Finder</h1>
-            <h2 onClick={this.darkConvert} id="dark">
-              {!dark_style? <img src={whiteImg} alt="DarkMode"/> : <img src={darkImg} alt="WhiteMode"/> }
-            </h2>
+            </div>
           </div>
           <ErrorBoundary>
-            <SearchBox search={this.handleChange} submit ={this.handleSubmit}/>
+            <SearchBox search={this.handleChange} submit={this.handleSubmit}/>
           </ErrorBoundary>
           <ErrorBoundary>
             <div className="user-repo">
@@ -164,7 +140,6 @@ class App extends React.Component{
         </div>
       );
     }
-  }
 }
 
 export default App;

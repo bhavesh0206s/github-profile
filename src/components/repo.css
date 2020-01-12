@@ -2,12 +2,12 @@
     margin: 100px 0px 50px 100px;
     display: grid;
     grid-gap: 50px;
-    grid-template-columns: repeat(2, minmax(200px, 2fr));
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
     font-family: 'Alegreya', serif;
 }
 .white-repo-details{
     border-radius: 5px;
-    width: 300px;
+    min-width: 200px;
     min-height: 15vh;
     padding: 5px;
     box-shadow:
@@ -20,7 +20,7 @@
 }
 .dark-repo-details{
     border-radius: 5px;
-    width: 300px;
+    min-width: 200px;
     min-height: 15vh;
     padding: 5px;
     box-shadow:
@@ -41,4 +41,11 @@
 }
 #description{
     padding-top: 5px;
+}
+
+@media only screen and (max-width: 500px) {
+    #repo{
+        margin: 50px 15px 50px 15px;
+        grid-template-columns: repeat(1, minmax(200px, 1fr));
+    }
 }

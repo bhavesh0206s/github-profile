@@ -9,11 +9,10 @@
     padding: 10px;
     box-sizing: border-box;
     border: none;
-    border-bottom: 2px solid rgb(36, 154, 233);
     outline: none;
     font-weight: 300;
     font-size: 15px;
-    box-shadow: 2px 8px 8px -5px rgb(36, 154, 233);
+    animation: redblue 2s ease-in-out infinite alternate;
 }
 
 #submit-btn{
@@ -24,6 +23,27 @@
     min-height: 30px;
     border-radius: 4px;
     border: none;
-    box-shadow: 2px 8px 8px -5px rgb(36, 154, 233);
+    box-shadow: 2px 8px 8px -5px rgb(144, 144, 145);
     cursor: pointer;
+    animation: redblue 2s ease-in-out infinite alternate; 
+}
+
+
+
+@keyframes redblue{
+    from{
+        box-shadow: 2px 8px 8px -5px rgb(255, 49, 49);
+    }
+    to{
+        box-shadow: 2px 8px 8px -5px rgb(36, 154, 233);
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .form{
+        margin: 30px 0px 20px 75px;
+    }
+    #submit-btn{
+        margin-left: 5em;
+    }
 }

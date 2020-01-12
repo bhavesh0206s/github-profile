@@ -3,11 +3,10 @@
     font-family: 'Alegreya', serif;
 }
 
-
 .user-photo > img{
     width:250px;
-    border-bottom: 2px solid rgb(36, 154, 233);
     border-radius: 50%;
+    animation: redblue 2s ease-in-out infinite alternate;
 }
 .user-photo > h3{
     margin: 5px 0px 10px 38px ;
@@ -21,10 +20,30 @@
 }
 ul{
     list-style-type: none;
+    
 }
 li{
-    box-shadow: 0px 8px 8px -8px rgb(36, 154, 233);
+    animation-name: redblue;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+@keyframes redblue{
+    from{
+        box-shadow: 2px 8px 8px -5px rgb(255, 49, 49);
+    }
+    to{
+        box-shadow: 2px 8px 8px -5px rgb(36, 154, 233);
+    }
 }
 li>span{
     float: right;
+}
+
+
+@media only screen and (max-width: 500px) {
+    .user-details{
+        margin: 10px 0px 0px 65px;
+        
+    }
 }
