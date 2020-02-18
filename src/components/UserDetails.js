@@ -1,10 +1,19 @@
 import React from 'react';
 import './user.css'
+import { useState } from 'react';
 
 const UserDetails = ({username, followers, repo_count, user_dp, following})=>{
+    const [animate, setAnimate] = useState('')
+    const [toggle, setToggle] = useState(false)
+    // const MoveUp = () => {
+    //   console.log(toggle)
+    //   setToggle(!toggle)
+    //   setAnimate('animated pulse faster')
+    // }
+
     return(
         <div className="user-details">
-            <div className="user-photo">
+            <div className='user-photo'>
                 <img src={user_dp} alt={username}/>
                 <h3>{username}</h3>
             </div>

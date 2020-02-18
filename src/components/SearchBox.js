@@ -13,7 +13,7 @@ const SearchBox = ({search, submit})=>{
                         onChange={search}
                     />
                 </label>
-               <input id="submit-btn" type="submit"/>
+               <input id="submit-btn" type="submit" value="Submit"/>
            </form>
        </div> 
     );

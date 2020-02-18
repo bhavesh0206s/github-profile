@@ -7,7 +7,7 @@
 }
 .white-repo-details{
     border-radius: 5px;
-    min-width: 200px;
+    max-width: 380px;
     min-height: 15vh;
     padding: 5px;
     box-shadow:
@@ -20,7 +20,7 @@
 }
 .dark-repo-details{
     border-radius: 5px;
-    min-width: 200px;
+    max-width: 380px;
     min-height: 15vh;
     padding: 5px;
     box-shadow:
