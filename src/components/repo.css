@@ -8,8 +8,8 @@
 .white-repo-details{
     border-radius: 5px;
     max-width: 380px;
-    min-height: 15vh;
-    padding: 5px;
+    /* min-height: 15vh; */
+    padding: 20px;
     box-shadow:
         0 2.8px 2.2px rgba(0, 0, 0, 0.034),
         0 6.7px 5.3px rgba(0, 0, 0, 0.048),
@@ -21,8 +21,8 @@
 .dark-repo-details{
     border-radius: 5px;
     max-width: 380px;
-    min-height: 15vh;
-    padding: 5px;
+    /* min-height: 15vh; */
+    padding: 20px;
     box-shadow:
         0 2.8px 2.2px rgba(255, 255, 255, 0.034),
         0 6.7px 5.3px rgba(255, 255, 255, 0.048),
@@ -41,6 +41,10 @@
 }
 #description{
     padding-top: 5px;
+}
+
+#anchor-tag{
+  color: inherit;
 }
 
 @media only screen and (max-width: 500px) {

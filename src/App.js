@@ -121,7 +121,7 @@ class App extends React.Component{
     const whiteImg = "https://img.icons8.com/cotton/64/000000/planet-on-the-dark-side.png"
 
       return(
-        <div>
+        <div className='container'>
           <div className="heading-main">
             <h1 id="heading">Github Profile Finder</h1>
             <div onClick={this.darkMode} id="dark">
@@ -133,8 +133,8 @@ class App extends React.Component{
           </ErrorBoundary>
           <ErrorBoundary>
             <div className="user-repo">
-              <UserDetails username={username} followers={followers} repo_count={repo_count} user_dp={user_dp} following={following}/>
-              <RepoDetails description={description} repo_name={repo_name} fork_count={fork_count} star_count={star_count} darkOrwhite={repo_style} />
+              <UserDetails username={username} followers={followers} repo_count={repo_count} user_dp={user_dp} following={following} darkOrwhite={repo_style}/>
+              <RepoDetails user={this.state.name} description={description} repo_name={repo_name} fork_count={fork_count} star_count={star_count} darkOrwhite={repo_style} />
             </div>
           </ErrorBoundary>
         </div>
