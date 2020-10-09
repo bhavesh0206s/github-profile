@@ -1,52 +1,51 @@
-.form{
-    margin: 30px 0px 20px 180px;
+.form {
+  margin: 30px 0px 20px 180px;
 }
 
-#search-field{
-    min-width: 200px;
-    min-height: 30px;
-    border-radius: 4px;
-    padding: 10px;
-    box-sizing: border-box;
-    border: none;
-    outline: none;
-    font-weight: 300;
-    font-size: 15px;
-    animation: redblue 2s ease-in-out infinite alternate;
+#search-field {
+  min-width: 200px;
+  min-height: 30px;
+  border-radius: 4px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  font-weight: 300;
+  font-size: 15px;
+  animation: bluered 2s ease-in-out infinite alternate;
 }
 
-#submit-btn{
-    font-size: 15px;
-    padding: 10px;
-    margin: 5px;
-    min-width: 70px;
-    min-height: 30px;
-    border-radius: 4px;
-    border: none;
-    box-shadow: 2px 8px 8px -5px rgb(144, 144, 145);
-    cursor: pointer;
-    animation: redblue 2s ease-in-out infinite alternate; 
+#submit-btn {
+  font-size: 15px;
+  padding: 10px;
+  margin: 5px;
+  min-width: 70px;
+  min-height: 30px;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 2px 8px 8px -5px rgb(144, 144, 145);
+  cursor: pointer;
+  animation: bluered 2s ease-in-out infinite alternate;
 }
 
-#submit-btn:hover{
-    background-color: rgb(143, 145, 145);
+#submit-btn:hover {
+  background-color: rgb(143, 145, 145);
 }
 
-
-@keyframes redblue{
-    from{
-        box-shadow: 2px 8px 8px -5px rgb(255, 49, 49);
-    }
-    to{
-        box-shadow: 2px 8px 8px -5px rgb(36, 154, 233);
-    }
+@keyframes bluered {
+  from {
+    box-shadow: 2px 8px 8px -5px rgb(255, 49, 49);
+  }
+  to {
+    box-shadow: 2px 8px 8px -5px rgb(36, 154, 233);
+  }
 }
 
 @media only screen and (max-width: 500px) {
-    .form{
-       display: flex;
-    }
-    #submit-btn{
-        margin-left: 1em;
-    }
+  .form {
+    display: flex;
+  }
+  #submit-btn {
+    margin-left: 1em;
+  }
 }
